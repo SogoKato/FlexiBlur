@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexiBlur</title>
+  <link rel="stylesheet" href="destyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="canvasArea">
+    <canvas id="canvas" class="canvasArea__canvas"></canvas>
+  </div>
+  <div id="controller" class="controller">
+    <div id="controllerVisibility" class="controller__visibility">
+      <i class="fa-solid fa-chevron-down"></i>
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <div class="controller__ratioArea">
+      <div>
+        <label for="ratioX" class="controller__ratioInputLabel controller__ratioInputLabel--left">
+          <input type="text" name="ratioX" id="ratioX">
+        </label>
+        <div><i class="fa-solid fa-x"></i></div>
+        <label for="ratioY" class="controller__ratioInputLabel">
+          <input type="text" name="ratioY" id="ratioY">
+        </label>
+        <div><i class="fa-solid fa-arrow-right"></i></div>
+        <span id="currentSize"></span>
+      </div>
+      <span>1. SET RATIO (ONLY BEFORE YOU SELECT A PHOTO)</span>
+    </div>
+    <div class="controller__sourceArea">
+      <div>
+        <label for="source" class="controller__fileInputLabel">
+          <i class="fa-duotone fa-solid fa-upload fa-2x"></i>
+          <input type="file" name="source" id="source" accept=".png,.jpg,.jpeg">
+        </label>
+        <div class="controller__filename">
+          <span id="filename"></span>
+          <button id="unload"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+      </div>
+      <span>2. SELECT A PHOTO</span>
+    </div>
+    <div class="controller__colorArea">
+      <label for="bgColor">
+        <input type="color" name="bgColor" id="bgColor" value="#eeeeee">
+      </label>
+      <span>3. CHOOSE COLOR</span>
+    </div>
+    <div>
+      <span>4. ADJUST GRADATION USING SLIDER</span>
+    </div>
+    <div class="controller__saveArea">
+      <label for="save">
+        <button id="save"><i class="fa-solid fa-download fa-2x"></i></button>
+      </label>
+      <span>5. SAVE!</span>
+    </div>
+  </div>
+  <input type="range" name="gradientBottom" id="gradientBottom" class="gradientBottom" min="0" max="1" step="0.01" value="0.9">
+  <script src="flexiblur.js"></script>
+</body>
+
+</html>

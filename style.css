@@ -1,0 +1,122 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.canvasArea {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.canvasArea__canvas {
+    width: 95%;
+}
+
+.controller {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 3rem;
+    bottom: 20px;
+    display: flex;
+    filter: drop-shadow(0 2px 5px #3c3c3c);
+    -webkit-filter: drop-shadow(0 2px 5px #3c3c3c);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    left: 10%;
+    padding: 1rem 2rem;
+    position: fixed;
+    transition: all .5s;
+    width: 80%;
+}
+
+.controller.controller--hidden {
+    opacity: 0.4;
+}
+
+.controller__visibility {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.controller.controller--hidden .fa-chevron-down {
+    display: none;
+}
+
+.controller:not(.controller--hidden) .fa-chevron-up {
+    display: none;
+}
+
+.controller__sourceArea,
+.controller__ratioArea,
+.controller__colorArea,
+.controller__saveArea {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin: 0.5rem 0;
+}
+
+.controller.controller--hidden > *:not(.controller__visibility) {
+    display: none;
+}
+
+.controller__sourceArea > span,
+.controller__ratioArea > span,
+.controller__colorArea > span,
+.controller__saveArea > span {
+    font-size: 0.8rem;
+}
+
+.controller input[type=file] {
+    display: none;
+}
+
+.controller__filename {
+    display: none;
+}
+
+.controller__filename.controller__filename--visible {
+    display: block;
+}
+
+.controller__ratioArea {
+    min-width: 16rem;
+}
+
+.controller__sourceArea > div,
+.controller__ratioArea > div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.controller__ratioInputLabel input {
+    font-size: 1.5rem;
+    width: 3rem;
+}
+
+.controller__ratioInputLabel--left input {
+    text-align: right;
+    width: 2rem;
+}
+
+.gradientBottom {
+    position: absolute;
+    writing-mode: vertical-lr;
+    direction: rtl;
+}
+
+.gradientBottom::-webkit-slider-thumb,
+.gradientBottom::-moz-range-thumb {
+    background-color: #3c3c3c;
+    border: 2px solid #fff;
+    border-radius: 0 1rem 1rem 0;
+    width: 2rem;
+}
