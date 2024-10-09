@@ -195,4 +195,14 @@ function saveImage() {
   } else {
     welcome();
   }
+
+  if (window.EyeDropper) {
+    const eyeDropperButton = document.getElementById("eyeDropper");
+    eyeDropperButton.classList.add("controller__eyeDropper--visible");
+    eyeDropperButton.addEventListener("click", async () => {
+      const eyeDropper = new EyeDropper();
+      const result = await eyeDropper.open();
+      document.getElementById("bgColor").value = result.sRGBHex;
+    });
+  }
 })();

@@ -77,11 +77,13 @@ body {
     display: none;
 }
 
-.controller__filename {
+.controller__filename,
+.controller__eyeDropper {
     display: none;
 }
 
-.controller__filename.controller__filename--visible {
+.controller__filename.controller__filename--visible,
+.controller__eyeDropper.controller__eyeDropper--visible {
     display: block;
 }
 
@@ -90,7 +92,8 @@ body {
 }
 
 .controller__sourceArea > div,
-.controller__ratioArea > div {
+.controller__ratioArea > div,
+.controller__colorArea > div {
     align-items: center;
     display: flex;
     justify-content: space-between;
